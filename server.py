@@ -6,7 +6,7 @@ def extract_last_folder_name(path):
     return parts[5]
 
 
-food_prediction_model = load_learner("pet_breed_model.pkl")
+food_predict_model = load_learner("pet_breed_model.pkl")
 
 
 def predict_food(image):
@@ -28,7 +28,7 @@ sample_dir = "/kaggle/input/fruit-and-vegetable-image-recognition/test"
 sample_files = get_image_files(sample_dir)
 
 for i in range(10):
-    predict_single_digit(sample_files[i])
+    predict_food(sample_files[i])
 
 st.text("Food Prediction Model")
 st.text("Built by Jayden Hang")
