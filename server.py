@@ -4,7 +4,7 @@ from fastai.vision.all import *
 
 def extract_last_folder_name(path):
     parts = str(path).split("/")
-    return parts[5]
+    return parts[6]
 
 model_path = Path("food_prediction_model.pkl")
 food_predict_model = load_learner(model_path)
