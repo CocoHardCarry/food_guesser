@@ -32,4 +32,4 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg
 # If a file is uploaded, make a prediction
 if uploaded_file is not None:
     prediction_class, accuracy = predict_food(uploaded_file)
-    st.image(uploaded_file, caption=f"Prediction: {predicted_class} - {(accuracy * 100):.2f}%", use_column_width=True)
+    st.image(uploaded_file, caption=f"Prediction: {prediction_class} - {(accuracy * 100):.2f}%", use_column_width=True)
