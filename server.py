@@ -27,7 +27,7 @@ def predict_food(image):
 
 
 
-   img.show(title=f"{prediction[0]} - {(accuracy * 100):.2f}%")
+   return prediction, accuracy
 
 
 sample_dir = "/kaggle/input/fruit-and-vegetable-image-recognition/test"
@@ -48,5 +48,5 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg","png","jpeg"]
 
 
 if uploaded_file is not None:
-   prediction = predict(uploaded_file)
-   st.image(uploaded_file, caption=prediction, use_column_width=True)
+    prediction_class, accuracy = predict_food(uploaded_file)
+    st.image(uploaded_file, caption=f"Prediction: {prediction_class} - {(accuracy * 100):.2f}%", use_column_width=True)
