@@ -20,10 +20,13 @@ def predict_food(image):
     breed_index = prediction[1].item()
     accuracy = prediction[2][breed_index]
 
-    return predicted_class, accuracy
+    if accuracy > 0.9:
+        return f"{prediction_class} - {accuracy * 100}% confident."
+    else:
+        return f"I am not sure what this is, it might be {predicted_class} - {accuracy * 100}% confident."
 
 # Streamlit app UI
-st.title("Food Prediction Model")
+st.title("Fruit/Vegetable Prediction Model")
 st.text("Built by Jayden Hang")
 
 # File uploader for user to upload an image
