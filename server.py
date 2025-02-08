@@ -20,7 +20,7 @@ def predict_food(image):
     breed_index = prediction[1].item()
     accuracy = prediction[2][breed_index]
 
-    if accuracy > 0.9:
+    if accuracy > 0.82:
         return f"{prediction_class} - {accuracy * 100}% confident."
     else:
         return f"I am not sure what this is, it might be {predicted_class} - {accuracy * 100}% confident."
@@ -35,4 +35,5 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg
 # If a file is uploaded, make a prediction
 if uploaded_file is not None:
     prediction_class = predict_food(uploaded_file)
-    st.image(uploaded_file, caption=prediction_class, use_column_width=True)
+    st.title(uploaded_file, caption="",use_column_width=True)
+
