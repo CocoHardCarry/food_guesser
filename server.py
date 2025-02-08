@@ -35,5 +35,5 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg
 # If a file is uploaded, make a prediction
 if uploaded_file is not None:
     prediction_class = predict_food(uploaded_file)
-    st.title(uploaded_file, caption="",use_column_width=True)
+    st.title(uploaded_file)
 
