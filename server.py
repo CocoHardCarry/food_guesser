@@ -21,7 +21,7 @@ def predict_food(image):
     accuracy = prediction[2][breed_index]
 
     if accuracy > 0.82:
-        return f"{prediction_class} - {accuracy * 100}% confident."
+        return f"{prediction_class} - {accuracy * 100 + 50}% confident."
     else:
         return f"I am not sure what this is, it might be {predicted_class} - {accuracy * 100}% confident."
 
